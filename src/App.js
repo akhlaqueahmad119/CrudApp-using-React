@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import Header from "./component/Header"
+import Table from "./component/Table.js";
+//import CustomizedDialogs from "./component/CustomizedDialogs"
+//import Form from "./component/Form"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+ //import Table from "./component/Table.js";
+
+// import ReactDOM from "react-dom/client";
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div>
+    // <Header/>
+    //  <Table/>
+    // </div>
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+        <Route path="/Table" element={<Table />} />
+      {/* <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NoPage />} />
+     */}
+    </Routes>
+  </BrowserRouter>
+    
+   
   );
 }
 
